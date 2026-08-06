@@ -77,3 +77,62 @@ else:
     print("Invalid Choice")
 
 processor.process_payment(amount)
+
+Sample Output:
+
+
+Enter payment amount: 2500
+
+Choose Payment Method
+1. Credit Card
+2. Debit Card
+3. UPI
+4. Net Banking
+Enter your choice: 1
+
+Payment of Rs. 2500.0 made using Credit Card.
+
+Enter payment amount: 1500
+
+Choose Payment Method
+1. Credit Card
+2. Debit Card
+3. UPI
+4. Net Banking
+Enter your choice: 2
+
+Payment of Rs. 1500.0 made using Debit Card.
+
+Enter payment amount: 999
+
+Choose Payment Method
+1. Credit Card
+2. Debit Card
+3. UPI
+4. Net Banking
+Enter your choice: 3
+
+Payment of Rs. 999.0 made using UPI.
+
+Enter payment amount: 5000
+
+Choose Payment Method
+1. Credit Card
+2. Debit Card
+3. UPI
+4. Net Banking
+Enter your choice: 4
+
+Payment of Rs. 5000.0 made using Net Banking.
+
+Enter payment amount: 1200
+
+Choose Payment Method
+1. Credit Card
+2. Debit Card
+3. UPI
+4. Net Banking
+Enter your choice: 5
+
+Invalid Choice
+Please select a payment method.
