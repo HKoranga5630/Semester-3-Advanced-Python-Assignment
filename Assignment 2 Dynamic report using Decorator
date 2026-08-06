@@ -52,3 +52,15 @@ print(r1)
 
 # Display total reports
 Report.total_reports()
+
+Sample Output:
+
+Enter Report Title: Monthly Sales
+Enter Report Content: Sales increased by 20% compared to last month.
+========================================
+REPORT
+Title : Monthly Sales
+Content : Sales increased by 20% compared to last month.
+========================================
+Report Title: Monthly Sales
+Total Reports Created: 1
