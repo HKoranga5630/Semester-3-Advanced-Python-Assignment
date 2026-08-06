@@ -138,3 +138,49 @@ while True:
 
     else:
         print("Invalid Choice! Please try again.")
+
+
+Sample Output:
+
+===== Library Management System =====
+1. Add Book
+2. Register Patron
+3. Borrow Book
+4. Return Book
+5. Display Books
+6. Display Patrons
+7. Exit
+
+Enter your choice: 1
+Enter Book ID: 101
+Enter Book Title: Python
+Enter Author Name: ABC
+Book added successfully!
+
+Enter your choice: 2
+Enter Patron ID: 1
+Enter Patron Name: Himani
+Patron registered successfully!
+
+Enter your choice: 3
+Enter Patron ID: 1
+Enter Book ID: 101
+Book borrowed successfully!
+
+Enter your choice: 5
+
+Library Books:
+ID: 101, Title: Python, Author: ABC, Status: Borrowed
+
+Enter your choice: 4
+Enter Patron ID: 1
+Enter Book ID: 101
+Book returned successfully!
+
+Enter your choice: 5
+
+Library Books:
+ID: 101, Title: Python, Author: ABC, Status: Available
+
+Enter your choice: 7
+Thank You!
