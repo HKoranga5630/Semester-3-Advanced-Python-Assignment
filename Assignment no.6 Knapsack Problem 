@@ -1,0 +1,89 @@
+# 0/1 Knapsack Problem
+# Using Top-Down and Bottom-Up Dynamic Programming
+
+# Step 1: Take input 
+n = int(input("Enter number of items: "))
+
+weights = []
+values = []
+
+# Step 2: Enter weight and value of each item
+for i in range(n):
+    w = int(input(f"Enter weight of item {i + 1}: "))
+    v = int(input(f"Enter value of item {i + 1}: "))
+    weights.append(w)
+    values.append(v)
+
+# Step 3: Enter maximum weight capacity
+capacity = int(input("Enter maximum weight capacity: "))
+
+
+# Step 4: Top-Down approach (Memoization)
+def knapsack_top_down(i, capacity, memo):
+    if i == 0 or capacity == 0:
+        return 0
+
+    if (i, capacity) in memo:
+        return memo[(i, capacity)]
+
+    # If item is too heavy, don't include it
+    if weights[i - 1] > capacity:
+        memo[(i, capacity)] = knapsack_top_down(
+            i - 1, capacity, memo
+        )
+    else:
+        # Maximum of including or excluding the item
+        include = values[i - 1] + knapsack_top_down(
+            i - 1, capacity - weights[i - 1], memo
+        )
+
+        exclude = knapsack_top_down(
+            i - 1, capacity, memo
+        )
+
+        memo[(i, capacity)] = max(include, exclude)
+
+    return memo[(i, capacity)]
+
+
+# Step 5: Bottom-Up approach (Tabulation)
+def knapsack_bottom_up():
+    dp = [[0] * (capacity + 1) for _ in range(n + 1)]
+
+    for i in range(1, n + 1):
+        for w in range(1, capacity + 1):
+
+            if weights[i - 1] <= w:
+                dp[i][w] = max(
+                    values[i - 1] + dp[i - 1][w - weights[i - 1]],
+                    dp[i - 1][w]
+                )
+            else:
+                dp[i][w] = dp[i - 1][w]
+
+    return dp[n][capacity]
+
+
+# Step 6: Calculate using Top-Down
+memo = {}
+top_down_result = knapsack_top_down(n, capacity, memo)
+
+# Step 7: Calculate using Bottom-Up
+bottom_up_result = knapsack_bottom_up()
+
+
+# Step 8: Display results
+print("\nMaximum value using Top-Down:", top_down_result)
+print("Maximum value using Bottom-Up:", bottom_up_result)
+
+
+
+Sample Output:
+
+Enter number of items: 1
+Enter weight of item 1: 5
+Enter value of item 1: 6
+Enter maximum weight capacity: 9
+
+Maximum value using Top-Down: 6
+Maximum value using Bottom-Up: 6
