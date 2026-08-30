@@ -38,3 +38,13 @@ while i > 0 and j > 0:
 # Step 6: Display the result
 print("Longest Common Subsequence:", lcs)
 print("Length of LCS:", len(lcs))
+
+
+
+
+Sample Output:
+
+Enter first sequence: ABCD
+Enter second sequence: AECHFYUK
+Longest Common Subsequence: AC
+Length of LCS: 2
